@@ -1,0 +1,10 @@
+.task_column {
+  width: 33.33%;
+  margin: 20px;
+}
+
+.task_column_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

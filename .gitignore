@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Vite cache
+.vite/
+
+# Logs
+*.log
+
+# Dependency directories
+.pnp/
+.pnp.js
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Optional npm cache directory
+.npm
+
+# Build artifacts
+*.tgz
