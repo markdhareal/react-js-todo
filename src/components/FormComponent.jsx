@@ -9,6 +9,10 @@ const FormComponent = () => {
     tags: [],
   });
 
+  const checkTag = (tag) => {
+    return taskData.tags.includes(tag);
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -51,10 +55,26 @@ const FormComponent = () => {
 
           <div className="task_form_bottom_line">
             <div>
-              <TagComponent tagName="Personal" selectTag={selectTag} />
-              <TagComponent tagName="Work" selectTag={selectTag} />
-              <TagComponent tagName="Shopping" selectTag={selectTag} />
-              <TagComponent tagName="Hobbies" selectTag={selectTag} />
+              <TagComponent
+                tagName="Personal"
+                selectTag={selectTag}
+                selected={checkTag("Personal")}
+              />
+              <TagComponent
+                tagName="Work"
+                selectTag={selectTag}
+                selected={checkTag("Work")}
+              />
+              <TagComponent
+                tagName="Shopping"
+                selectTag={selectTag}
+                selected={checkTag("Shopping")}
+              />
+              <TagComponent
+                tagName="Hobbies"
+                selectTag={selectTag}
+                selected={checkTag("Hobbies")}
+              />
             </div>
 
             <div>
