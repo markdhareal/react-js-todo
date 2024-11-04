@@ -27,6 +27,12 @@ const FormComponent = ({ setTasks }) => {
     setTasks((prev) => {
       return [...prev, taskData];
     });
+
+    setTaskData({
+      task: "",
+      status: "todo",
+      tags: [],
+    });
   };
 
   const selectTag = (tag) => {
@@ -49,6 +55,7 @@ const FormComponent = ({ setTasks }) => {
           <input
             name="task"
             type="text"
+            value={taskData.task}
             className="task_input"
             placeholder="Enter Task"
             onChange={handleChange}
@@ -81,6 +88,7 @@ const FormComponent = ({ setTasks }) => {
             <div>
               <select
                 name="status"
+                value={taskData.status}
                 className="task_status"
                 onChange={handleChange}
               >
