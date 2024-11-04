@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./FormComponent.css";
 import TagComponent from "./TagComponent";
 
-const FormComponent = () => {
+const FormComponent = ({ setTasks }) => {
   const [taskData, setTaskData] = useState({
     task: "",
     status: "todo",
@@ -24,6 +24,9 @@ const FormComponent = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(taskData);
+    setTasks((prev) => {
+      return [...prev, taskData];
+    });
   };
 
   const selectTag = (tag) => {
@@ -38,8 +41,6 @@ const FormComponent = () => {
       });
     }
   };
-
-  console.log(taskData.tags);
 
   return (
     <>
