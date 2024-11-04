@@ -1,8 +1,12 @@
 import React from "react";
 import "./TagComponent.css";
 
-const TagComponent = (props) => {
-  return <button className="tag">{props.tagName}</button>;
+const TagComponent = ({ tagName, selectTag }) => {
+  return (
+    <button type="button" onClick={() => selectTag(tagName)} className="tag">
+      {tagName}
+    </button>
+  );
 };
 
 export default TagComponent;

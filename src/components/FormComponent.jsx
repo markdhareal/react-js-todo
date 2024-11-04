@@ -6,6 +6,7 @@ const FormComponent = () => {
   const [taskData, setTaskData] = useState({
     task: "",
     status: "todo",
+    tags: [],
   });
 
   const handleChange = (event) => {
@@ -21,6 +22,21 @@ const FormComponent = () => {
     console.log(taskData);
   };
 
+  const selectTag = (tag) => {
+    if (taskData.tags.some((item) => item === tag)) {
+      const filterTags = taskData.tags.filter((item) => item !== tag);
+      setTaskData((previosValue) => {
+        return { ...previosValue, tags: filterTags };
+      });
+    } else {
+      setTaskData((previosValue) => {
+        return { ...previosValue, tags: [...previosValue.tags, tag] };
+      });
+    }
+  };
+
+  console.log(taskData.tags);
+
   return (
     <>
       <header className="app_header_section">
@@ -35,10 +51,10 @@ const FormComponent = () => {
 
           <div className="task_form_bottom_line">
             <div>
-              <TagComponent tagName="Personal" />
-              <TagComponent tagName="Work" />
-              <TagComponent tagName="Shopping" />
-              <TagComponent tagName="Hobbies" />
+              <TagComponent tagName="Personal" selectTag={selectTag} />
+              <TagComponent tagName="Work" selectTag={selectTag} />
+              <TagComponent tagName="Shopping" selectTag={selectTag} />
+              <TagComponent tagName="Hobbies" selectTag={selectTag} />
             </div>
 
             <div>
