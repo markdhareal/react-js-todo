@@ -21,6 +21,18 @@
   width: 100%;
 }
 
+.task_input_error {
+  font-size: 20px;
+  font-weight: 500;
+  background: #f9f9f9;
+  color: #000;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
 .task_form_bottom_line {
   display: flex;
   align-items: center;

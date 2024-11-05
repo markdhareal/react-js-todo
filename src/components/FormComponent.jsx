@@ -9,6 +9,8 @@ const FormComponent = ({ setTasks }) => {
     tags: [],
   });
 
+  const [error, setError] = useState(false);
+
   const checkTag = (tag) => {
     return taskData.tags.includes(tag);
   };
@@ -24,15 +26,20 @@ const FormComponent = ({ setTasks }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(taskData);
-    setTasks((prev) => {
-      return [...prev, taskData];
-    });
+    if (taskData.task) {
+      setTasks((prev) => {
+        return [...prev, taskData];
+      });
 
-    setTaskData({
-      task: "",
-      status: "todo",
-      tags: [],
-    });
+      setTaskData({
+        task: "",
+        status: "todo",
+        tags: [],
+      });
+      setError(false);
+    } else {
+      setError(true);
+    }
   };
 
   const selectTag = (tag) => {
@@ -56,7 +63,7 @@ const FormComponent = ({ setTasks }) => {
             name="task"
             type="text"
             value={taskData.task}
-            className="task_input"
+            className={error ? "task_input_error" : "task_input"}
             placeholder="Enter Task"
             onChange={handleChange}
           />
