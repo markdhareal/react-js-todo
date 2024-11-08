@@ -5,6 +5,7 @@ import DropArea from "./DropArea";
 
 const TaskColumn = ({
   taskTitle,
+  icon,
   tasks,
   status,
   handleDelete,
@@ -13,7 +14,10 @@ const TaskColumn = ({
 }) => {
   return (
     <section className="task_column">
-      <h2 className="task_column_title">{taskTitle}</h2>
+      <h2 className="task_column_title">
+        <img className="task_column_icon" src={icon} />
+        {taskTitle}
+      </h2>
 
       <DropArea onDrop={() => onDrop(status, 0)} />
       {tasks.map(

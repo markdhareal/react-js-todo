@@ -3,6 +3,10 @@ import "./App.css";
 import FormComponent from "./components/FormComponent";
 import TaskColumn from "./components/TaskColumn";
 
+import todoIcon from "./assets/target.png";
+import working from "./assets/roadmap.png";
+import done from "./assets/checked.png";
+
 const oldTask = localStorage.getItem("tasks");
 
 const App = () => {
@@ -40,6 +44,7 @@ const App = () => {
       <main className="app_main_section">
         <TaskColumn
           taskTitle="To-Do"
+          icon={todoIcon}
           tasks={tasks}
           status="todo"
           handleDelete={handleDelete}
@@ -48,6 +53,7 @@ const App = () => {
         />
         <TaskColumn
           taskTitle="Working"
+          icon={working}
           tasks={tasks}
           status="working"
           handleDelete={handleDelete}
@@ -56,6 +62,7 @@ const App = () => {
         />
         <TaskColumn
           taskTitle="Done"
+          icon={done}
           tasks={tasks}
           status="done"
           handleDelete={handleDelete}
