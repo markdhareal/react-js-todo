@@ -14,9 +14,8 @@ const TaskColumn = ({
   return (
     <section className="task_column">
       <h2 className="task_column_title">{taskTitle}</h2>
-      {/* Drop Area for the whole column */}
-      <DropArea onDrop={() => onDrop(status, 0)} />{" "}
-      {/* Using index 0 as an example */}
+
+      <DropArea onDrop={() => onDrop(status, 0)} />
       {tasks.map(
         (task, index) =>
           task.status === status && (
@@ -28,9 +27,8 @@ const TaskColumn = ({
                 index={index}
                 setActiveCard={setActiveCard}
               />
-              {/* Drop Area for each task card */}
-              <DropArea onDrop={() => onDrop(status, index + 1)} />{" "}
-              {/* Pass correct index */}
+
+              <DropArea onDrop={() => onDrop(status, index + 1)} />
             </React.Fragment>
           )
       )}

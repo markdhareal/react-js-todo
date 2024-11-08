@@ -64,7 +64,7 @@ const FormComponent = ({ setTasks }) => {
             type="text"
             value={taskData.task}
             className={error ? "task_input_error" : "task_input"}
-            placeholder="Enter Task"
+            placeholder={error ? "Please Input Task" : "Enter Task"}
             onChange={handleChange}
           />
 
